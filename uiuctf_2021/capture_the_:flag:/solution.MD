@@ -16,9 +16,9 @@ at the emote `:flag:` in the server. To get the emote, the easiest way to obtain
 resolution image is to right click and open link and then download from the browser. After
 downloading this image the next piece of information to look at is the image description.
 You can use the command link tool `exiftool` to find the image description by typing
-`exiftool flag.png` and then seeing in the description the hint `Pixels[1337:]` which means
+`exiftool flag.png` and then seeing in the description the hint `LSBs(Pixels[1337:])` which means
 that you should start reading the message at the 1338th pixel, or with 0 indexing, pixel
-number 1337.
+number 1337 and you should be looking at the Least Significant Bit.
 
 To decode the image, create a list of all pixels, `Pixels`, including and after the 1338th
 pixel of the image. For this I used the `PIL` library, specifically the `Image` class. Then
